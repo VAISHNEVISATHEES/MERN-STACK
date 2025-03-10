@@ -1,0 +1,10 @@
+.para{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 40px;
+    font-weight: 200;
+    font-style: italic;
+    line-height: 50px;
+    text-align: center;
+    text-decoration: underline;
+    text-transform: uppercase;
+}
