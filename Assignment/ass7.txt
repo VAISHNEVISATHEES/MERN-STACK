@@ -1,0 +1,79 @@
+
+1. WHAT IS HTML
+  Hyper text markup language
+
+
+2. WHY HTML IS USED
+      To display the contents in web
+
+
+
+3. What is Emmet & List 5 Emmet
+
+	to wirte html and css code faster using abbrevation
+	1. p tag
+	2. heading tag
+	3. a tag
+	4. button tag
+	5. img tag
+
+4.SHORT CUT CREATE of Emmet Boiler plate of HTML
+	HTML:5
+
+
+5. WHAT STRUCTURE OF HTML
+	<html>
+	<head>
+	</head>
+	<body>
+	</body>
+	</html>
+
+
+6.WHAT IS **HEAD** TAG
+	the head tag contains metadata and link to external resourecs 
+
+
+7. WHAT IS BODY TAG
+	To display the content
+
+8.IMPORTANT 3 ELEMENTS OR TAGS
+
+	<h1>...<h6>
+	<p>
+	<button>
+
+9. WHAT IS DIFFERENT B/W ELEMENTS & TAGS IN HTML
+	Elements : h1,h2,p,button,....
+	Tag :<h1></h1>,<p></p>,.....
+
+
+10. WHAT IS CSS
+
+	Cascading stylesheet
+11. WHY IS CSS
+	To style the webpage
+
+12. HOW TO CONNECT HTML & CSS , Tell the emmet Shortcut
+	linktag
+
+13. HOW TO GET FONT & COLOR , IMAGE, CDN
+	font-family , color ,<img>, get the image link from imagekit.io
+
+14. BASIC CSS FAMILY : Text Family, Color & Background Family, Box Model
+	Text family:text-align,text-decoration,....
+	Color and background: color,bg-color,background-image:url(),.....
+	box model: height,width,marign ,padding,border
+
+15.WHEN TO USE **BACKGROUND IMG** VS **IMG TAG**
+	background image : image as background picture
+	img tag : image to upload
+
+16. WHAT IS LAYOUT & Explain About flexbox Properties
+	layout - arrangement of element on webpage
+	flexbox properties - flex flex-row justify-center items-center
+			     flex flex-col items-center justify-center
+
+17. WHAT IS TAILWIND CSS & WHY IS IT USED
+	css framework. minimized code with customized styling 
+
