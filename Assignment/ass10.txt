@@ -1,0 +1,2 @@
+1.What is JavaScript?
+	- Javascript is a dynamic and interpreted language used for creating dynamic websites
