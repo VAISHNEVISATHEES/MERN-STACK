@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat and bulb</title>
+</head>
+<body>
+    <img src="#" alt="cat-image">
+    <img src="#" alt="bulb-image">
+    <p id="paragraph">Switched off</p>
+    <button id="onbutton">On</button>
+    <button id="offbutton">Off</button>
+    <script>
+        const para = document.getElementById("paragraph");
+        const onbutton = document.getElementById("onbutton");
+        const offbutton = document.getElementById("offbutton");
+        onbutton.addEventListener("click",()=>{
+            para.textContent = "Switched on";
+        })
+        offbutton.addEventListener("click",()=>{
+            para.textContent = "Switched off";
+        })
+    </script>
+</body>
+</html>

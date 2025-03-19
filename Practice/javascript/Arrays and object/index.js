@@ -82,3 +82,18 @@ let obj ={
 console.log(obj)
 console.log(obj.habits[1])
 console.log(obj.cars.brand)
+
+//loose and strict equality
+// loose equality checks the number is equal are not
+// strict equality checks the datatype is equal are not
+
+let num1=10
+let num2="10"
+
+if (num1==num2)
+{
+    console.log("true")
+}
+else{
+    console.log(" false")
+}
