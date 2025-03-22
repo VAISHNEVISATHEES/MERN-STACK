@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <!--Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="flex flex-col justify-center items-center space-y-4 mt-8">
+        <p>Counter</p>
+        <p id="count">0</p>
+        <div class="flex flex-row gap-5">
+            <button id="decrease-btn" class="border px-3 border-black">-</button>
+            <button id="reset-btn" class="border px-3 border-black">Reset</button>
+            <button id="increase-btn" class="border px-3 border-black">+</button>
+        </div>
+
+    </div>
+    
+    <script>
+        const counter = document.getElementById("count");
+        const increase= document.getElementById("increase-btn");
+        const reset = document.getElementById("reset-btn");
+        const decrease =document.getElementById("decrease-btn");
+
+        increase.addEventListener("click",()=>{
+            counter.textContent = parseInt(counter.textContent)+1;
+        })
+
+        decrease.addEventListener("click",()=>{
+            counter.textContent = parseInt(counter.textContent)-1;
+        })
+
+        reset.addEventListener("click",()=>{
+            counter.textContent =0;
+        })
+    </script>
+</body>
+</html>
