@@ -4,22 +4,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cat and bulb</title>
+    <!--Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-    <img src="#" alt="cat-image">
-    <img src="#" alt="bulb-image">
-    <p id="paragraph">Switched off</p>
-    <button id="onbutton">On</button>
-    <button id="offbutton">Off</button>
+        <div class="flex flex-col justify-center items-center bg-[black] h-screen">
+            <img src="https://ik.imagekit.io/4z8covdo9/Full%20stack/bulb-go-off-img.png" alt="bulb-go-on-img" class="h-36" id="bulb">
+            <img src="https://ik.imagekit.io/4z8covdo9/Full%20stack/cat-eyes-img.png" alt="cat-img" class="h-36" id="cat">
+            <p id="paragraph" class="text-white">Switched off</p>
+            <div class="flex flex-row gap-3">
+                <button id="onbutton" class="text-white">On</button>
+                <button id="offbutton" class="text-white">Off</button>
+            </div> 
+        </div>
+
+  
+    
     <script>
         const para = document.getElementById("paragraph");
         const onbutton = document.getElementById("onbutton");
         const offbutton = document.getElementById("offbutton");
+        const bulbimg = document.getElementById("bulb");
+        const catimg = document.getElementById("cat");
         onbutton.addEventListener("click",()=>{
             para.textContent = "Switched on";
+            bulbimg.src="https://ik.imagekit.io/4z8covdo9/Full%20stack/bulb-go-on-img.png"
+            catimg.src="https://ik.imagekit.io/4z8covdo9/Full%20stack/cat-img.png"
         })
         offbutton.addEventListener("click",()=>{
             para.textContent = "Switched off";
+            bulbimg.src="https://ik.imagekit.io/4z8covdo9/Full%20stack/bulb-go-off-img.png"
+            catimg.src="https://ik.imagekit.io/4z8covdo9/Full%20stack/cat-eyes-img.png"
         })
     </script>
 </body>
