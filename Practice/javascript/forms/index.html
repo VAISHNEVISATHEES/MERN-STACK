@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms</title>
+    <!--CSS File : Tailwind CSS-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!--FireBase SDK-->
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+</head>
+<body>
+
+
+    <!--
+    step 1: e.preventDefault() => stop reloading
+    step 2: get the data => input.value
+    step3: To validate the data from step 2
+        - Basic validation
+           - type="email"
+        - Regex validation
+
+    step 4: save to DB
+    -->
+
+    <form action="" id="form" class="px-5 py-5 w-[40%] space-y-4">
+        <!--Name-->
+        <div class="flex flex-col justify-start items-start">
+            <label for="name">Name:</label>
+            <input id="name" type="text" class="border border-green-400"/>
+        </div>
+        
+        <!--Email-->
+        <div class="flex flex-col justify-start items-start">
+            <label for="email">Email:</label>
+            <input id="email"  class="border border-green-400"/>
+            <p id="mailError" class="text-red-500"></p>
+        </div>
+        <!--Message-->
+        <div class="flex flex-col justify-start items-start">
+            <label for="message">Message:</label>
+            <textarea id="message" class="border border-green-400"></textarea>
+        </div>
+        
+        <!--button-->
+        <button id="submit" class="bg-green-500 text-white p-3 rounded-lg">Submit</button>
+    </form>
+    <script>
+        const nameElement = document.getElementById("name");
+        const emailElement = document.getElementById("email");
+        const messageElement = document.getElementById("message");
+        const formElement = document.getElementById("form");
+
+        const mailErrorElement = document.getElementById("mailError");
+
+        function validateData(name, email,message) 
+        {
+            console.log("validateData:",name,email,message);
+            let isValid = true;
+            var regex = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+            if (!regex.test(email))
+            {
+                mailErrorElement.textContent = "Invalid email format";
+                isValid = false;
+            }
+           
+
+            return isValid
+        }
+
+        function SaveDataToDB(name, email,message){
+            // Your web app's Firebase configuration
+            const firebaseConfig = {
+            apiKey: "AIzaSyBlVcswzarsA0HUMdgkvY6fD_DbupYi1uQ",
+            authDomain: "forms-js-8f95d.firebaseapp.com",
+            databaseURL: "https://forms-js-8f95d-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "forms-js-8f95d",
+            storageBucket: "forms-js-8f95d.firebasestorage.app",
+            messagingSenderId: "414717217368",
+            appId: "1:414717217368:web:b8ec17992bdfa6fc77582d"
+            };
+            // if not initialized then initialize it
+            if(!firebase.apps.length){
+                firebase.initializeApp(firebaseConfig);  //DB connection
+            }
+
+            const db = firebase.database().ref("Loginform");
+
+            db.push({
+                name:name,
+                email:email,
+                message:message
+            })
+
+            formElement.reset();
+            mailErrorElement.textContent = "";
+
+        }
+
+        formElement.addEventListener("submit", (e) =>{
+            // changing normal behaviour of forms (refresh ) we have to select form not the button
+            // e is a event
+            console.log(e);
+            // becomes false so accessing and taking e 
+            e.preventDefault();
+
+
+            //Data from form
+            console.log(nameElement.value); //value is a property
+            console.log(emailElement.value);
+            console.log(messageElement.value);
+
+            //validation 
+            const res = validateData(nameElement.value,emailElement.value,messageElement.value);
+            console.log(res);
+
+            // save data to DB 
+            if (res)
+            {
+                SaveDataToDB(nameElement.value,emailElement.value,messageElement.value);
+            }
+    })
+        
+
+    </script>
+</body>
+</html>
+
+
+<!--Button => click event-->
